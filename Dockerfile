@@ -1,5 +1,13 @@
 FROM mhart/alpine-node:4
 
+RUN apk add --update-cache \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install virtualenv \
+  && rm -rf /var/cache/apk/*
+
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
 
