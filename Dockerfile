@@ -26,6 +26,14 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 	# Environment variable holding file path for flows configuration
 	ENV FLOWS=flows.json
 	
-
-	CMD ["npm", "install  node-red-contrib-influxdb"]
+	#My Custom Packages
+	CMD ["npm", "install node-red-contrib-influxdb"]
+	CMD ["npm", "install node-red-dashboard"]
+	CMD ["npm"," install node-red-contrib-alexa-remote2"] 
+	CMD ["npm", "install node-red-contrib-sonos-plus"] 
+	CMD ["npm", "install node-red-contrib-tasmota"]
+	CMD ["npm", "install node-red-contrib-smartthings"] 
+	CMD ["npm", "install node-red-contrib-unifi"]	
+	
+	#Finally, start node-red
 	CMD ["npm", "start", "--", "--userDir", "/data"]
